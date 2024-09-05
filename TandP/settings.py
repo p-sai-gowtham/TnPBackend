@@ -26,11 +26,14 @@ SECRET_KEY = 'django-insecure--1*1d%q70kmpf=jhm8(v9k^=ly^42t*encf%)3kj_tfxi35tx(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", "tnpbackend-production.up.railway.app"]
 
 SITE_ID = 1
 # Application definition
-CSRF_TRUSTED_ORIGINS = ["https://tn-p-frontend.vercel.app"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://tn-p-frontend.vercel.app",
+    "https://tnpbackend-production.up.railway.app",
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -58,7 +61,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'TandP.urls'
 
-CORS_ALLOWED_ORIGINS = ["https://tn-p-frontend.vercel.app"]
+CORS_ALLOWED_ORIGINS = [
+    "https://tn-p-frontend.vercel.app",
+    "https://tnpbackend-production.up.railway.app",
+]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
