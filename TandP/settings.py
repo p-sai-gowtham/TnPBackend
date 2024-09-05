@@ -24,13 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--1*1d%q70kmpf=jhm8(v9k^=ly^42t*encf%)3kj_tfxi35tx('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
 SITE_ID = 1
 # Application definition
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+CSRF_TRUSTED_ORIGINS = ["https://tn-p-frontend.vercel.app"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -55,16 +55,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
-
 
 ROOT_URLCONF = 'TandP.urls'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000'
-]
+CORS_ALLOWED_ORIGINS = ["https://tn-p-frontend.vercel.app"]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
