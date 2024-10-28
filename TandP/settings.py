@@ -36,6 +36,14 @@ CSRF_TRUSTED_ORIGINS = [
     'https://tn-p-frontend-72uxlr17t-psaigowthams-projects.vercel.app',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "https://tn-p-frontend.vercel.app",
+    "https://tnpbackend-production.up.railway.app",
+    'https://tn-p-frontend-72uxlr17t-psaigowthams-projects.vercel.app',
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -62,12 +70,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'TandP.urls'
 
-CORS_ALLOWED_ORIGINS = [
-    "https://tn-p-frontend.vercel.app",
-    "https://tnpbackend-production.up.railway.app",
-]
-
-CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {
