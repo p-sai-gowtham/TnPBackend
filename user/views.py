@@ -9,7 +9,6 @@ from django.http import JsonResponse
 import json
 
 
-@csrf_exempt
 def signin(request):
     if request.method == "POST":
         try:
