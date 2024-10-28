@@ -9,6 +9,7 @@ from django.http import JsonResponse
 import json
 
 
+@csrf_exempt
 def signin(request):
     if request.method == "POST":
         try:
@@ -98,4 +99,3 @@ def remove_user(request, user_id):
 
     messages.success(request, 'User deleted successfully!')
     return redirect('app:admin')
-

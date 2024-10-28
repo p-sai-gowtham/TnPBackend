@@ -6,7 +6,7 @@ import json, os
 from django.views.decorators.csrf import csrf_exempt
 
 
-
+@csrf_exempt
 def all_students(request):
     if request.method == "POST":
         data = json.loads(request.body)
@@ -61,7 +61,7 @@ def student(request, pk):
     return JsonResponse(student_dict, safe=False)
 
 
-
+@csrf_exempt
 def add_drive_data(request):
     if request.method == "POST":
         try:
@@ -90,7 +90,7 @@ def add_drive_data(request):
     return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 
-
+@csrf_exempt
 def upload_resume(request, type):
     if request.method == "POST":
         resume_file = request.FILES.get("resume")
@@ -110,7 +110,7 @@ def upload_resume(request, type):
             return JsonResponse({"error": "Invalid data"}, status=400)
     return JsonResponse({"error": "Invalid method"}, status=405)
 
-
+@csrf_exempt
 def delete_file(request, file_id):
     if request.method == 'POST':
         document = Document.objects.get(id=file_id)
@@ -122,7 +122,7 @@ def delete_file(request, file_id):
     else:
         return JsonResponse({"error": "Invalid data"}, status=400)
 
-
+@csrf_exempt
 def add_job_applications(request):
     if request.method == "POST":
         try:
@@ -156,7 +156,7 @@ def add_job_applications(request):
 
     return JsonResponse({'error': 'Invalid request method'}, status=405) 
 
-
+@csrf_exempt
 def delete_job_application(request, pk):
     if request.method == 'POST':
         job_application = JobApplication.objects.get(id=pk)
@@ -169,7 +169,7 @@ def delete_job_application(request, pk):
         return JsonResponse({"error": "Invalid data"}, status=400)
 
 
-
+@csrf_exempt
 def edit_job_application(request, pk):
     if request.method == "POST":
         try:
@@ -226,7 +226,7 @@ def get_all_job_applications(request):
     job_applications_list = [model_to_dict(job_application) for job_application in job_applications]
     return JsonResponse(job_applications_list, safe=False)
 
-
+@csrf_exempt
 def submit_application(request):
     if request.method == "POST":
         try:
@@ -262,7 +262,7 @@ def submit_application(request):
     return JsonResponse({"error": "Invalid request method"}, status=405)
 
 
-
+@csrf_exempt
 def get_applied_applications(request):
     if request.method == "POST":
         body = json.loads(request.body)
@@ -274,7 +274,7 @@ def get_applied_applications(request):
     return JsonResponse({"error": "Invalid request method"}, status=405)
 
 
-
+@csrf_exempt
 def get_applied_students(request):
     if request.method == "POST":
         try:
