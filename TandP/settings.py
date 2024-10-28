@@ -26,13 +26,14 @@ SECRET_KEY = 'django-insecure--1*1d%q70kmpf=jhm8(v9k^=ly^42t*encf%)3kj_tfxi35tx(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*", "tnpbackend-production.up.railway.app"]
+ALLOWED_HOSTS = ["*", "tnpbackend-production.up.railway.app", 'https://tn-p-frontend-72uxlr17t-psaigowthams-projects.vercel.app']
 
 SITE_ID = 1
 # Application definition
 CSRF_TRUSTED_ORIGINS = [
     "https://tn-p-frontend.vercel.app",
     "https://tnpbackend-production.up.railway.app",
+    'https://tn-p-frontend-72uxlr17t-psaigowthams-projects.vercel.app',
 ]
 
 INSTALLED_APPS = [
